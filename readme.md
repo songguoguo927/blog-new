@@ -18,3 +18,8 @@ res.render()
 8，数据库的连接安装
 首先本地安装MongoDB，并启动服务
 再进行连接
+>可以下载本地可视化工具
+[mongoose用法参考手册](http://mongoosejs.com/)
+数据库的使用
+9,前端页面用户登录注册
+有运用ajax

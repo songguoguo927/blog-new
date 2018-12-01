@@ -8,6 +8,6 @@ var router = express.Router();
 
 router.get('/',function(req,res,next){
 //    res.send('<h1>welcome to my blog<h1>');
-    res.render('index'); 
+    res.render('main/index'); 
 });
 module.exports = router;

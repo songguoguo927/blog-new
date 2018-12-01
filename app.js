@@ -5,6 +5,8 @@ author：xjm
 var express = require('express');
 
 var swig = require('swig');
+//加载数据库模块
+var mongoose = require('mongoose');
 //创建app应用 =》nodejs http.createServer();
 var app = express();
 
@@ -28,10 +30,18 @@ app.use('/', require('./routers/main'));
 app.use('/admin', require('./routers/admin'));
 app.use('/api', require('./routers/api'));
 
+mongoose.connect('mongodb://localhost:27018/blog-new',function(err){
+    if(err){
+        console.log('数据库连接失败');
+    }else{
+        console.log('数据库连接成功');
+        app.listen(8081);
+        console.log("please open localhost:8081 or 127.0.0.1:8081 in browser!");
+    }
+});
 
-app.listen(8081);
 
-console.log("please open localhost:8081 or 127.0.0.1:8081 in browser!");
+
 
 
 

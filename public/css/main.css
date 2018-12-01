@@ -1,0 +1,19 @@
+body{
+    background-color: #ebeff2;
+}
+            h1 {
+                text-align: center;
+            }
+            .container-small {
+                max-width: 500px;
+                background-color: #fff;
+                margin:10% auto; 
+                border-radius: 5px;  
+            }
+   
+            .btn{
+                margin-bottom: 20px;
+            }
+   
+
+    
