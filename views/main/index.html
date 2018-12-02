@@ -10,8 +10,8 @@
     <body>
     <h1>welcome to my blog!-yoyo</h1>
     <!--登录-->
-    <div  class="container container-small">    
-        <h2>Login</h2>
+    <div  class="container container-small" id="logInBox" style="display:none">    
+        <h2>Log in</h2>
         <form>
             <!--<div id="tip" class="alert alert-success">登录成功~正在跳转...</div>-->
             <div class="form-group">
@@ -23,47 +23,40 @@
                 <label for="">password</label>
                 <input type="pasword" class="form-control">               
             </div>
-            <button type="submit" class="btn btn-primary btn-block" onclick="tip()">走你</button>
-            <script>
-               function tip(){
-                   //点击走你触发进度提示
-                //    document.getElementById("tip").style.visibility="visible";
-                alert("快点写功能，人家不想再弹出来了");
-               }
-            </script>
+            <button type="submit" class="btn btn-primary btn-block">走你</button>
+            
+            <!--<p>忘记密码啦！<a href="javascript:;">找回密码</a></p>-->
 
         </form>
+        <p>没有账号？<a href="javascript:;">立即注册</a></p>
     </div>
 <!--注册-->
-    <div  class="container container-small">    
+    <div  class="container container-small" id="registerBox">    
         <h2>Register</h2>
         <form>
             <!--<div id="tip" class="alert alert-success">登录成功~正在跳转...</div>-->
             <div class="form-group">
                 <label for="">username</label>
-                <input type="username" class="form-control">               
+                <input type="username" name="username" class="form-control">               
             </div>
 
             <div class="form-group">
                 <label for="">password</label>
-                <input type="pasword" class="form-control">               
+                <input type="password" name="password" class="form-control">               
             </div>
 
             <div class="form-group">
                 <label for="">repassword</label>
-                <input type="repasword" class="form-control">               
+                <input type="password" name="repassword" class="form-control">               
             </div>
-            <button type="submit" class="btn btn-primary btn-block" onclick="tip()">走你注册</button>
-            <script>
-               function tip(){
-                   //点击走你触发进度提示
-                //    document.getElementById("tip").style.visibility="visible";
-                alert("快点写功能，人家不想再弹出来了");
-               }
-            </script>
-
+            <button name="register" type="submit" class="btn btn-primary btn-block">走你注册</button>
+            
         </form>
+        <p>已有账号<a href="javascript:;">马上登陆</a></p>
     </div>
+    <script src="/public/js/jquery-1.8.3.min.js"></script>
+    <script src="/public/js/index.js"></script>
+    
     </body>
 </html>
 
