@@ -35,7 +35,7 @@ app.use('/', require('./routers/main'));
 app.use('/admin', require('./routers/admin'));
 app.use('/api', require('./routers/api'));
 
-mongoose.connect('mongodb://localhost:27018/blog-new',function(err){
+mongoose.connect('mongodb://localhost:27018/blog-new',{useNewUrlParser:true},function(err){
     if(err){
         console.log('数据库连接失败');
     }else{

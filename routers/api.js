@@ -2,6 +2,8 @@ var express = require('express');
 //创建路由对象
 var router = express.Router();
 
+var User = require('../models/User');
+
 var responseData;
 
 router.use(function(req,res,next){
@@ -49,9 +51,34 @@ router.post('/user/register',function(req,res,next){
         res.json(responseData);
         return;
     }
-    responseData.message = '注册成功';
-    res.json(responseData);
 
+//用户名是否被注册,如果数据库中已经存在和我们要注册的用户名同名的数据，表示该用户名已经被注册了
+  User.fineOne({ username: username}).then(function(userInfo){
+      console.log(userInfo);
+      if(userInfo){
+        //数据库中有该记录
+          responseData.code = 4;
+          responseData.message = '用户名已经被注册了';
+          res.json(responseData);
+          return;
+      }
+      //数据库中没有该记录，则进行存储
+      var user =new User({
+          username: username,
+          password: password
+      });
+      return user.save();
+
+  }).then(function(newUserInfo){
+      console.log(newUserInfo);
+      responseData.message = '注册成功';
+      res.json(responseData);
+  });
+    
+
+    
+    //  responseData.message ='注册成功';
+    //  res.json(responseData);
 
 });
 module.exports = router;
