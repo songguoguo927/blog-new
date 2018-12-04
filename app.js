@@ -23,7 +23,7 @@ app.set('view engine','html');
 //在开发过程中，需要取消模板缓存
 swig.setDefaults({cache:false});
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use( bodyParser.urlencoded({ extended: true }));
 
 //设置静态文件托管
