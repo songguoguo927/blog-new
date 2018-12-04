@@ -46,8 +46,8 @@ $(function(){
             // fail: function(){
             //     console.log("result");
             // }
-
          });
+         //先改用一般的js获取数据？？
          
     })
 });
