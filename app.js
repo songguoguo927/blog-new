@@ -2,24 +2,24 @@
 *应用程序的启动（入口）文件
 author：xjm
 */
-var express = require('express');
+const express = require('express');
 
-var swig = require('swig');
+const swig = require('swig');
 //加载数据库模块
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 //加载body-parser 用来处理post提交过来的数据
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 //创建app应用 =》nodejs http.createServer();
-var app = express();
+const app = express();
 
 
 //配置应用模板
-app.engine('html',swig.renderFile);
+// app.engine('ejs',swig.renderFile);
 //设置模板文件存放的目录
 app.set('views','./views');
 //注册所使用的模板引擎，第一个参数为固定，第二个与配置是的第一个参数一致。
-app.set('view engine','html');
+app.set('view engine','ejs');
 //在开发过程中，需要取消模板缓存
 swig.setDefaults({cache:false});
 
